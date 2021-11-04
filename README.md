@@ -1,3 +1,3 @@
-# homeword
+# homework
 一些课程作业
 ！！！仅供参考，切勿照搬照抄
