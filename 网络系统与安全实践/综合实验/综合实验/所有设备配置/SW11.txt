@@ -1,0 +1,110 @@
+!
+version RGOS 10.4(3b16)p2 Release(178747)(Mon Sep 29 14:22:37 CST 2014 -ngcf62)
+hostname SW11
+!
+!
+!
+redundancy
+ auto-sync time-period 3600
+ auto-sync standard
+ switchover timeout 4000
+!
+!
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+vlan 10
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode rstp
+spanning-tree
+interface FastEthernet 0/1
+ switchport access vlan 10
+!
+interface FastEthernet 0/2
+ switchport access vlan 10
+!
+interface FastEthernet 0/3
+!
+interface FastEthernet 0/4
+!
+interface FastEthernet 0/5
+!
+interface FastEthernet 0/6
+!
+interface FastEthernet 0/7
+!
+interface FastEthernet 0/8
+!
+interface FastEthernet 0/9
+!
+interface FastEthernet 0/10
+!
+interface FastEthernet 0/11
+!
+interface FastEthernet 0/12
+!
+interface FastEthernet 0/13
+!
+interface FastEthernet 0/14
+!
+interface FastEthernet 0/15
+!
+interface FastEthernet 0/16
+!
+interface FastEthernet 0/17
+!
+interface FastEthernet 0/18
+!
+interface FastEthernet 0/19
+!
+interface FastEthernet 0/20
+!
+interface FastEthernet 0/21
+!
+interface FastEthernet 0/22
+!
+interface FastEthernet 0/23
+!
+interface FastEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+!
+!
+end

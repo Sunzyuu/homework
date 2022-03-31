@@ -1,0 +1,147 @@
+!
+version RGOS 10.4(3b19)p3 Release(178747)(Thu Oct  9 19:13:04 CST 2014 -ngcf67)
+hostname SW1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+vlan 10
+!
+vlan 20
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip access-list standard qoslimit1
+ 10 permit host 10.1.1.254 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+class-map classmap1
+ match access-group qoslimit1
+!
+!
+policy-map policymap1
+ class classmap1
+!
+!
+!
+spanning-tree mode rstp
+spanning-tree
+interface FastEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 10.11.11.2 255.255.255.248
+!
+interface FastEthernet 0/2
+ switchport access vlan 10
+!
+interface FastEthernet 0/3
+ switchport access vlan 20
+!
+interface FastEthernet 0/4
+!
+interface FastEthernet 0/5
+!
+interface FastEthernet 0/6
+!
+interface FastEthernet 0/7
+!
+interface FastEthernet 0/8
+!
+interface FastEthernet 0/9
+!
+interface FastEthernet 0/10
+!
+interface FastEthernet 0/11
+!
+interface FastEthernet 0/12
+!
+interface FastEthernet 0/13
+!
+interface FastEthernet 0/14
+!
+interface FastEthernet 0/15
+!
+interface FastEthernet 0/16
+!
+interface FastEthernet 0/17
+!
+interface FastEthernet 0/18
+!
+interface FastEthernet 0/19
+!
+interface FastEthernet 0/20
+!
+interface FastEthernet 0/21
+!
+interface FastEthernet 0/22
+!
+interface FastEthernet 0/23
+!
+interface FastEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface VLAN 10
+ no ip proxy-arp
+ ip address 10.1.1.254 255.255.255.0
+!
+interface VLAN 20
+ no ip proxy-arp
+ ip address 10.1.2.254 255.255.255.0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router ospf 1
+ network 10.1.1.0 0.0.0.255 area 0
+ network 10.1.2.0 0.0.0.255 area 0
+ network 10.11.11.0 0.0.0.7 area 0
+!
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+!
+!
+end
