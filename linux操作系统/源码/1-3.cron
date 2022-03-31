@@ -1,0 +1,4 @@
+50 16 * * * rm -r /abc/*   
+0 8-18/1 * * * cut -f1 /xyz/x1 >;>; /backup/bak01.txt   
+50 17 * * * tar zcvf backup.tar.gz /data    
+55 17 * * * umount /dev/hdc					
